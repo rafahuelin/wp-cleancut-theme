@@ -4,11 +4,17 @@
     <div class="container">
         <div class="col-md-12">
             <div class="showcase-content">
-                <h1>CleanCut Theme</h1>
-                <p class="lead">Custom Wordpress Theme by Rafa Huelin</p>
-                <a class="btn btn-default btn-lg" href=""><i class="fa fa-facebook fa-fw"></i> Facebook</a>
-                <a class="btn btn-default btn-lg" href=""><i class="fa fa-twitter fa-fw"></i> Twitter</a>
-                <a class="btn btn-default btn-lg" href=""><i class="fa fa-linkedin fa-fw"></i> Linkedin</a>
+                <h1><?php echo get_theme_mod('showcase_heading', 'CleanCut Theme') ?></h1>
+                <p class="lead"><?php echo get_theme_mod('showcase_text', 'A Wordpress Theme By Rafa Huelin') ?></p>
+                <?php if(get_theme_mod('facebook_url', 'http://facebook.com') != '') : ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('facebook_url', 'http://facebook.com'); ?>" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+                <?php endif; ?>
+                <?php if(get_theme_mod('twitter_url', 'http://twitter.com') != '') : ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('twitter_url', 'http://twitter.com'); ?>" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a>
+                <?php endif; ?>
+                <?php if(get_theme_mod('linkedin_url', 'http://linkedin.com') != '') : ?>
+                    <a class="btn btn-default btn-lg" href="<?php echo get_theme_mod('linkedin_url', 'http://linkedin.com'); ?>" target="_blank"><i class="fa fa-linkedin fa-fw"></i> Linkedin</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -61,27 +67,5 @@
         </div>
     </div>
 </div>
-
-<section class="banner">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>Follow Us On Social Media:</h2>
-            </div>
-            <div class="col-lg-6">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a class="btn btn-default btn-lg" href="#"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    <li>
-                        <a class="btn btn-default btn-lg" href="#"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a class="btn btn-default btn-lg" href="#"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 
 <?php get_footer(); ?>
