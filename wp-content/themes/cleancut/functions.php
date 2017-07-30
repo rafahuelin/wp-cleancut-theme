@@ -17,5 +17,19 @@ function cleancut_theme_support() {
 
 add_action('after_setup_theme', 'cleancut_theme_support');
 
+// Widget Locations
+function init_widgets($id){
+    register_sidebar(array(
+        'name' => 'Sidebar',
+        'id' => 'sidebar',
+        'before_widget' => '<div class="well animated fadeInRight sidebar-widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_widget' => '</h3>',
+    ));
+}
+
+add_action('widgets_init', 'init_widgets');
+
 // Add Customizer Functionality
 require get_template_directory() . '/inc/customizer.php';
