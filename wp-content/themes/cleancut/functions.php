@@ -4,6 +4,10 @@ require_once('wp_bootstrap_navwalker.php');
 
 // Theme Support
 function cleancut_theme_support() {
+    // Post Thumbs
+    add_theme_support('post-thumbnails');
+
+
     // nav Menus
     register_nav_menus(array(
         'primary' => __('Primary Menu'),
