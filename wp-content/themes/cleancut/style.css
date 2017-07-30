@@ -174,3 +174,8 @@ footer {
 .boxed-content.left-boxed-icon p {
     padding-left: 80px;
 }
+
+.excerpt p {
+    font-size: 18px;
+    font-weight: 400;
+}
