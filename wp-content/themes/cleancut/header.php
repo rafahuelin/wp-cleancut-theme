@@ -4,7 +4,9 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animate.css">
+    <?php if(get_theme_mod('animation', 1)) : ?>
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animate.css">
+    <?php endif; ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome.css">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <style>
@@ -14,7 +16,7 @@
         }
 
         .banner {
-            background: url('./img/banner.jpg') no-repeat center center;
+            background: url(<?php echo get_theme_mod('banner_image', get_bloginfo('template_url').'/img/banner.jpg'); ?>) no-repeat center center;
         }
     </style>
 </head>

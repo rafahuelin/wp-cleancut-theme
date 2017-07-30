@@ -108,6 +108,64 @@
         ));
 
 
+        // Bottom Banner Section
+        $wp_customize->add_section('banner', array(
+            'title' => __('Bottom Banner', 'cleancut'),
+            'description' => sprintf( __('Options for bottom banner area', 'cleancut')),
+            'priority' => 160
+        ));
+
+        // Image Setting
+        $wp_customize->add_setting('banner_image', array(
+            'default' => get_bloginfo('template_directory') . '/img/banner.jpg',
+            'type' => 'theme_mod'
+        ));
+
+        // Image Control
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_image', array(
+            'label' => __('Background Image', 'cleancut'),
+            'section' => 'banner',
+            'settings' => 'banner_image',
+            'priority' => 1
+        )));
+
+        // Heading Setting
+        $wp_customize->add_setting('banner_heading', array(
+            'default' => _x('Follow Us On Social Media', 'cleancut'),
+            'type' => 'theme_mod'
+        ));
+
+        // Heading Control
+        $wp_customize->add_control('banner_heading', array(
+            'label' => __('Heading', 'cleancut'),
+            'section' => 'banner',
+            'priority' => 3
+        ));
+
+        // Misc Options Section
+        $wp_customize->add_section('misc', array(
+            'title' => __('Misc Options', 'cleancut'),
+            'description' => sprintf( __('Misc options for theme'), 'cleancut'),
+            'priority' => 150,
+        ));
+
+        $wp_customize->add_setting('animation', array(
+            'default' => '1'
+        ));
+
+        // Misc Options Setting
+        $wp_customize->add_control(
+            new WP_Customize_Control(
+                $wp_customize,
+                'animation',
+                array(
+                    'label' => __('Enable Animation', 'cleancut'),
+                    'section' => 'misc',
+                    'settings' => 'animation',
+                    'type' => 'checkbox'
+                )
+            )
+        );
     }
 
     add_action('customize_register', 'cleancut_customize_register');

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <h2>Follow Us On Social Media:</h2>
+                <h2><?php echo get_theme_mod('banner_heading', 'Follow Us On Social Media'); ?>:</h2>
             </div>
             <div class="col-lg-6">
                 <ul class="list-inline banner-social-buttons">
